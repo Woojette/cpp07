@@ -5,6 +5,21 @@
 # include <string>
 # include <exception>
 
+template	<typename T>
+class	array
+{
+	private:
+		T				_data;
+		unsigned int	_size;
+	public:
+		Array();
+		Array(const Array& other);
+		~Array();
+		Array& operator=(const Array& other);
 
+		T&	operator[](unsigned int i);
+
+		unsigned int	size() const;
+};
 
 #endif
