@@ -18,10 +18,11 @@ class	Array
 		~Array();
 		Array& operator=(const Array& other);
 
-		T&	operator[](unsigned int i);
+		T&			operator[](unsigned int i);
 		const T&	operator[](unsigned int i) const;
 
 		unsigned int	size() const;
+
 };
 
 # include "Array.tpp"

@@ -11,10 +11,10 @@ Array<T>::Array(unsigned int n) : _data(new T[n]()), _size(n)
 }
 
 template <typename T>
-Array<T>::Array(const Array& other) : _data(new T) : _data(NULL), _size(0)
+Array<T>::Array(const Array& other) : _data(NULL), _size(0)
 {
 	std::cout << "Array constructor constructor called" << std::endl;
-	return (*this);
+	*this = other;
 }
 
 template <typename T>
@@ -28,7 +28,7 @@ template <typename T>
 Array<T>&	Array<T>::operator=(const Array& other)
 {
 	std::cout << "Array copy assignment operator called" << std::endl;
-	if (this != other)
+	if (this != &other)
 	{
 		delete[]	_data;
 		this->_size = other._size;
@@ -39,6 +39,21 @@ Array<T>&	Array<T>::operator=(const Array& other)
 	return (*this);
 }
 
+template <typename T>
+T&	Array<T>::operator[](unsigned int i)
+{
+	if (i >= this->_size)
+		throw	std::exception();
+	return (this->_data[i]);
+}
+
+template <typename T>
+const T&	Array<T>::operator[](unsigned int i) const
+{
+	if (i >= this->_size)
+		throw	std::exception();
+	return (this->_data[i]);
+}
 
 template <typename T>
 unsigned int	Array<T>::size() const
