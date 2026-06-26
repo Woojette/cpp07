@@ -7,7 +7,7 @@ void  arrayPrint(T& val)
 }
 
 template  <typename T>
-void  arrayPrint(const T& val)
+void  arrayPrintConst(const T& val)
 {
 	std::cout <<" [" << val << "] ";
 }
@@ -32,13 +32,28 @@ int main(void)
 	std::cout << std::endl << "############### TEST: int array ###############" << std::endl << std::endl;
 	std::cout << "1-1. int array print: ";
 	iter(arrayInt, 5, arrayPrint<int>);
-	std::cout << std::endl << "1-2. int array * 10: ";
+	std::cout << std::endl << "1-2. int array print: ";
+	iter(arrayInt, 5, arrayPrintConst<int>);
+	std::cout << "(fonction const)" << std::endl;
+	std::cout << "1-3. int array * 10: ";
 	iter(arrayInt, 5, multiplyTen<int>);
 	iter(arrayInt, 5, arrayPrint<int>);
 	std::cout << std::endl;
 
 	std::cout << std::endl << "2-1. const int array print: ";
 	iter(arrayConstInt, 5, arrayPrint<const int>);
+	std::cout << std::endl << "2-2. const int array print: ";
+	iter(arrayConstInt, 5, arrayPrintConst<int>);
+	std::cout << "(fonction const)" << std::endl;
+	try
+	{
+		/* code */
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	std::cout << std::endl << "(const references are read-only and cannot be modified)" << std::endl;
 
 	std::cout << std::endl << "############### TEST: double array ###############" << std::endl << std::endl;
