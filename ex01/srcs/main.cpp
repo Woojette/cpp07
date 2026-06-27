@@ -45,32 +45,33 @@ int main(void)
 	std::cout << std::endl << "2-2. const int array print: ";
 	iter(arrayConstInt, 5, arrayPrintConst<int>);
 	std::cout << "(fonction const)" << std::endl;
-	try
-	{
-		/* code */
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
 	std::cout << std::endl << "(const references are read-only and cannot be modified)" << std::endl;
+	
 
 	std::cout << std::endl << "############### TEST: double array ###############" << std::endl << std::endl;
 	std::cout << "1-1. double array print: ";
 	iter(arrayDouble, 5, arrayPrint<double>);
-	std::cout << std::endl << "1-2. double array * 10: ";
+	std::cout << std::endl << "1-2. double array print: ";
+	iter(arrayDouble, 5, arrayPrintConst<double>);
+	std::cout << "(fonction const)" << std::endl;
+	std::cout << std::endl << "1-3. double array * 10: ";
 	iter(arrayDouble, 5, multiplyTen<double>);
 	iter(arrayDouble, 5, arrayPrint<double>);
 	std::cout << std::endl;
 
 	std::cout << std::endl << "2-1. const double array print: ";
 	iter(arrayDoubleConst, 5, arrayPrint<const double>);
+	std::cout << std::endl << "2-2. const double array print: ";
+	iter(arrayDoubleConst, 5, arrayPrintConst<const double>);
+	std::cout << "(fonction const)" << std::endl;
 	std::cout << std::endl << "(const references are read-only and cannot be modified)" << std::endl;
 
 	std::cout << std::endl << "############### TEST: string array ###############" << std::endl << std::endl;
 	std::cout << "1-1. string array print: ";
 	iter(strs, 3, arrayPrint<std::string>);
+	std::cout << std::endl << "1-2. string array print: ";
+	iter(strs, 3, arrayPrintConst<std::string>);
+	std::cout << "(fonction const)" << std::endl;
 	std::cout << std::endl << "(std::string values cannot be multiplied)" << std::endl << std::endl;
 	std::cout << "2-1. const string array print: ";
 	iter(strsConst, 3, arrayPrint<const std::string>);

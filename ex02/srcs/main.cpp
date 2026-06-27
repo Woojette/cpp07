@@ -180,11 +180,5 @@ int main(void)
 	std::cout << "array12 size: " << array12.size();
 	std::cout << " { " << array12[0] << ", " << array12[1] << ", " << array12[2] << " }" << std::endl << std::endl;
 
-	// arr6
-	// arr7
-	// arr8
-	// delete	array5;
-	// delete	array6;
-	// delete	array7;
-	// delete array8;
+	return (0);
 }
