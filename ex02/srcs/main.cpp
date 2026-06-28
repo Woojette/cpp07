@@ -17,7 +17,6 @@ int main(void)
 	std::cout << " { " << array3[0] << ", " << array3[1] << ", " << array3[2] << ", " << array3[3] << ", " << array3[4] << " }" << std::endl;
 
 	std::cout << std::endl << "=============== TEST: modification int ===============" << std::endl << std::endl;
-	// std::cout << "array2 (original): " << array2 << std::endl;
 	std::cout << "array2 size (original): " << "{ " << array2[0] << ", " << array2[1] << ", " << array2[2] << ", " << array2[3] << ", " << array2[4] << " }" << std::endl;
 
 	std::cout << "~~~~~~~~~~~~~~~ modify: { 2, 12, 24, 11, 5 } ~~~~~~~~~~~~~~~" << std::endl;
@@ -29,14 +28,14 @@ int main(void)
 
 	std::cout << "array2 size (modified): " << "{ " << array2[0] << ", " << array2[1] << ", " << array2[2] << ", " << array2[3] << ", " << array2[4] << " }" << std::endl;
 
-	std::cout << std::endl << "=============== TEST: operator [] throw ===============" << std::endl << std::endl;
+	std::cout << std::endl << "=============== TEST: operator [] size error ===============" << std::endl << std::endl;
 	try
 	{
 		array2[8] = 97;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Error: exception: unsigned int >= _size" << std::endl;
+		std::cout << "Error: exception: index >= _size" << std::endl;
 	}
 
 	std::cout << std::endl << "=============== TEST: deep copy ===============" << std::endl << std::endl;
@@ -90,14 +89,14 @@ int main(void)
 
 	std::cout << "array6 size (modified): " << "{ " << array6[0] << ", " << array6[1] << ", " << array6[2] << ", " << array6[3] << ", " << array6[4] << " }" << std::endl;
 
-	std::cout << std::endl << "=============== TEST: operator [] throw ===============" << std::endl << std::endl;
+	std::cout << std::endl << "=============== TEST: operator [] size error ===============" << std::endl << std::endl;
 	try
 	{
 		array6[8] = 97;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Error: exception: unsigned double >= _size" << std::endl;
+		std::cout << "Error: exception: index >= _size" << std::endl;
 	}
 
 	std::cout << std::endl << "=============== TEST: deep copy ===============" << std::endl << std::endl;
@@ -150,14 +149,14 @@ int main(void)
 	std::cout << "array10 modified: " << array10.size();
 	std::cout << " { " << array10[0] << ", " << array10[1] << ", " << array10[2] << " }" << std::endl;
 
-	std::cout << std::endl << "=============== TEST: operator [] throw ===============" << std::endl << std::endl;
+	std::cout << std::endl << "=============== TEST: operator [] size error ===============" << std::endl << std::endl;
 	try
 	{
 		array10[8] = "hello";
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Error: exception: unsigned double >= _size" << std::endl;
+		std::cout << "Error: exception: index >= _size" << std::endl;
 	}
 
 	std::cout << std::endl << "=============== TEST: deep copy ===============" << std::endl << std::endl;
